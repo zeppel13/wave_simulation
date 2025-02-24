@@ -63,7 +63,7 @@ Problems:
 
 
 Good Ressources that helped:
-- [the WikiPedia article about the wave eqation](https://en.wikipedia.org/wiki/Wave_equation)
+- [the Wikipedia article about the wave eqation](https://en.wikipedia.org/wiki/Wave_equation)
 - [Nils Berglund's presentation about boundary conditions ](https://www.youtube.com/watch?v=pN-gi_omIVE)
 - your favorite LLM to get a quick starter on the math needed
 - other helpful knowlege about Taylor series and Euler method or Runge-Kutta-method are helpful for the understanding of the math
