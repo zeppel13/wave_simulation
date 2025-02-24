@@ -1,6 +1,6 @@
 # Sebastian Kind 2025
 # this project started at the CERN Art and Science Conference, as a visualization of different FDM wave models
-# and lead to this thing
+
 
 import numpy as np
 import matplotlib.pyplot as plt
