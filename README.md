@@ -53,9 +53,9 @@ Where $(r = \frac{c(x, y) \cdot dt}{dx})$ is the stability parameter that depend
 
 
 Problems:
-- Numerical Instability: The numerical simulation may suffer from instabilities if the time step $(dt)$ or the spatial resolution $( dx, dy )$ are not chosen appropriately. The Courant condition must be strictly followed to ensure stability in the wave propagation.
+- Numerical Instability: The numerical simulation may suffer from instabilities if the time step $(dt)$ or the spatial resolution $( dx, dy )$ are not chosen appropriately. The CLF condition must be followed to ensure stability in the wave propagation.
 - A small time step and/or large spatial step can cause oscillations or explosive growth in the wave amplitude, leading to unrealistic results. It really looks funny, how the animation patterns behave in the resulting plot with matplotlib
-- Boundary Reflections: Reflection artifacts occur at the boundaries of the grid. This is because the boundary conditions are set to reflect waves, but these reflections interfere with the wave propagation in the interior of the grid, creating unnatural interference patterns.
+- Boundary Reflections: Reflection artifacts occur at the boundaries of the grid, but these reflections interfere with the wave propagation in the interior of the grid, creating unnatural interference patterns.
 - Perfectly Matched Layer (PML) is implemented to avoid these reflections, I am still seing numerical reflections at PML, i'd rather comment this part of the code
     
 - Performance Issues: i mean the evaluation is slow, each "frame" is calculated in the update functions and runs the code execution through the UI. A smarter approach would first calculate all simulation values, and then run a smooth visualization in a video or gif
