@@ -17,11 +17,14 @@ Where:
 - $(\frac{\partial^2}{\partial t^2})$ is the time second derivative,
 - $(\frac{\partial^2}{\partial x^2})$ and $(\frac{\partial^2}{\partial y^2})$ are the spatial second derivatives.
 
-The simulation also handles boundary conditions, where the behavior of the wave at the edges of the simulation grid is modified to reflect realistic physical environments, including the implementation of Perfectly Matched Layer (short PML) to prevent wave reflections. Tho this not as simple as I thought it to be. I realize that waves still reflect no matter how I treat the boundary with a PML. I am still gradually learning.
+The simulation also handles boundary conditions, where the waves are reflected.
 
-Spatial Discretization, aka the nifty math of turning the PDE into something approximated, that can be simulated on a big grid
+I tried to implement Perfectly Matched Layer (short PML) to prevent wave reflections. Tho this not as simple as I thought it to be. I realize that waves still reflect no matter how I treat the boundary with a PML. I am still gradually learning. The reasoning behind PML let's us pretend that waves are leaving the simulation domain, simulating an open end to the wave field, where no reflections are expected, e.g. endlessly far range.
 
-We define a grid with a step size $ dx $ and $ dy $ in the $x$- and $y$-directions. Using a second-order finite difference approximation for the spatial derivatives, we approximate the wave equation as:
+The Wave Equation is a continuous PDE, that needs to be discretized first, in order to be simulated. We will be using a finite difference approximation for this. 
+Discretization, aka the nifty math of turning the PDE into something approximated, that can be simulated on a big grid with a step size $(dx)$ and $(dy)$ in the $(x)$- and $(y)$-directions. 
+
+Approximation of the spatial derivatives with a a second-order finite difference approximation:
 
 $$
 \frac{\partial^2 u(x, y, t)}{\partial x^2} \approx \frac{u(x + dx, y, t) - 2u(x, y, t) + u(x - dx, y, t)}{dx^2}
@@ -31,9 +34,8 @@ $$
 \frac{\partial^2 u(x, y, t)}{\partial y^2} \approx \frac{u(x, y + dy, t) - 2u(x, y, t) + u(x, y - dy, t)}{dy^2}
 $$
 
-Time Discretization
 
-For the time derivative, we use a central difference approximation:
+Same thing with for the time derivatives
 
 $$
 \frac{\partial^2 u(x, y, t)}{\partial t^2} \approx \frac{u(x, y, t + dt) - 2u(x, y, t) + u(x, y, t - dt)}{dt^2}
@@ -43,13 +45,18 @@ Where:
 - $(dt)$ is the time step,
 - $(dx)$ and $(dy)$ are the spatial step sizes.
 
-Thus, the numerical update for each point in the grid at time $(t+dt\$ becomes:
+Substitute the terms in the PDE waveequation with the discretized difference approximation (see above) and solve for $(u(...)) to get the function for  the numerical update for earch point in the grid at time $(t+dt\$:
+
 
 $$
 u(x, y, t + dt) = 2u(x, y, t) - u(x, y, t - dt) + r^2 \left[ u(x + dx, y, t) + u(x - dx, y, t) + u(x, y + dy, t) + u(x, y - dy, t) - 4u(x, y, t) \right]
 $$
 
 Where $(r = \frac{c(x, y) \cdot dt}{dx})$ is the stability parameter that depends on the wave speed $(c(x, y))$ and the spatial resolution $(dx)$. Numerical stability is achieved by ensuring that $(r \leq 1)$, i.e., the Courant-Friedrichs-Lewy (CFL) condition must be satisfied, else the numerical stability will be unhappy :(
+
+
+This formula can be implemented in Python to simulate the 2D wave.
+
 
 
 Problems:
