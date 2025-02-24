@@ -57,6 +57,15 @@ Where $(r = \frac{c(x, y) \cdot dt}{dx})$ is the stability parameter that depend
 
 This formula can be implemented in Python to simulate the 2D wave.
 
+´´´python
+for i in range(1, Nx-1):  
+
+        r_i = (c[i] * dt / dx) 
+        u_new[i, 1:-1] = (2 * u[i, 1:-1] - u_old[i, 1:-1] + 
+                          r_i**2 * (u[i+1, 1:-1] + u[i-1, 1:-1] + 
+                                    u[i, 2:] + u[i, :-2] - 4 * u[i, 1:-1]))
+´´´
+
 The simulation also handles boundary conditions, where the waves are reflected.
 
 I tried to implement Perfectly Matched Layer (short PML) to prevent wave reflections. Tho this not as simple as I thought it to be. I realize that waves still reflect no matter how I treat the boundary with a PML. I am still gradually learning. The reasoning behind PML let's us pretend that waves are leaving the simulation domain, simulating an open end to the wave field, where no reflections are expected, e.g. infinitely far range.
