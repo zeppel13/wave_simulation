@@ -45,7 +45,7 @@ Where:
 - $(dt)$ is the time step,
 - $(dx)$ and $(dy)$ are the spatial step sizes.
 
-Substitute the terms in the PDE waveequation with the discretized difference approximation (see above) and solve for $(u(...)) to get the function for  the numerical update for earch point in the grid at time $(t+dt)$:
+Substitute the terms in the PDE waveequation with the discretized difference approximation (see above) and solve for $(u(...))$ to get the function for  the numerical update for earch point in the grid at time $(t+dt)$:
 
 
 $$
