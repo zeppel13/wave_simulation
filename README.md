@@ -57,14 +57,14 @@ Where $(r = \frac{c(x, y) \cdot dt}{dx})$ is the stability parameter that depend
 
 This formula can be implemented in Python to simulate the 2D wave.
 
-´´´python
+```python
 for i in range(1, Nx-1):  
 
         r_i = (c[i] * dt / dx) 
         u_new[i, 1:-1] = (2 * u[i, 1:-1] - u_old[i, 1:-1] + 
                           r_i**2 * (u[i+1, 1:-1] + u[i-1, 1:-1] + 
                                     u[i, 2:] + u[i, :-2] - 4 * u[i, 1:-1]))
-´´´
+```
 
 The simulation also handles boundary conditions, where the waves are reflected.
 
