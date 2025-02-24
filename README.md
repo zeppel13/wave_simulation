@@ -54,12 +54,18 @@ Where $(r = \frac{c(x, y) \cdot dt}{dx})$ is the stability parameter that depend
 
 Problems:
 - Numerical Instability: The numerical simulation may suffer from instabilities if the time step $(dt)$ or the spatial resolution $( dx, dy )$ are not chosen appropriately. The CLF condition must be followed to ensure stability in the wave propagation.
-- A small time step and/or large spatial step can cause oscillations or explosive growth in the wave amplitude, leading to unrealistic results. It really looks funny, how the animation patterns behave in the resulting plot with matplotlib
-- Boundary Reflections: Reflection artifacts occur at the boundaries of the grid, but these reflections interfere with the wave propagation in the interior of the grid, creating unnatural interference patterns.
+
+- Boundary Reflections: Reflection artifacts occur at the boundaries of the grid, but these reflections interfere with the wave propagation in the interior of the grid, creating unnatural interference patterns. I was trying to reduce reflections with a dampening of the waves close to the boundaries trying to implement a perfectly matched layer PML
+
 - Perfectly Matched Layer (PML) is implemented to avoid these reflections, I am still seing numerical reflections at PML, i'd rather comment this part of the code
-    
+
 - Performance Issues: i mean the evaluation is slow, each "frame" is calculated in the update functions and runs the code execution through the UI. A smarter approach would first calculate all simulation values, and then run a smooth visualization in a video or gif
-   
+
+Good Ressources that helped:
+- [the WikiPedia article about the wave eqation] (https://en.wikipedia.org/wiki/Wave_equation)
+- [Nils Berglund's presentation about boundary conditions ](https://www.youtube.com/watch?v=pN-gi_omIVE)
+- your favorite LLM to get a quick starter on the math needed
+- other helpful knowlege about Taylor series and Euler method or Runge-Kutta-method are helpful for the understanding of the math
 
 
 ![Initial Impulse](plot1.png)
