@@ -60,12 +60,7 @@ Problems:
 - Perfectly Matched Layer (PML) is implemented to avoid these reflections, I am still seing numerical reflections at PML, i'd rather comment this part of the code
 
 - Performance Issues: i mean the evaluation is slow, each "frame" is calculated in the update functions and runs the code execution through the UI. A smarter approach would first calculate all simulation values, and then run a smooth visualization in a video or gif
-
-Good Ressources that helped:
-- [the WikiPedia article about the wave eqation](https://en.wikipedia.org/wiki/Wave_equation)
-- [Nils Berglund's presentation about boundary conditions ](https://www.youtube.com/watch?v=pN-gi_omIVE)
-- your favorite LLM to get a quick starter on the math needed
-- other helpful knowlege about Taylor series and Euler method or Runge-Kutta-method are helpful for the understanding of the math
+   
 
 
 ![Initial Impulse](plot1.png)
