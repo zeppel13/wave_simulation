@@ -19,7 +19,7 @@ Where:
 
 The simulation also handles boundary conditions, where the waves are reflected.
 
-I tried to implement Perfectly Matched Layer (short PML) to prevent wave reflections. Tho this not as simple as I thought it to be. I realize that waves still reflect no matter how I treat the boundary with a PML. I am still gradually learning. The reasoning behind PML let's us pretend that waves are leaving the simulation domain, simulating an open end to the wave field, where no reflections are expected, e.g. endlessly far range.
+I tried to implement Perfectly Matched Layer (short PML) to prevent wave reflections. Tho this not as simple as I thought it to be. I realize that waves still reflect no matter how I treat the boundary with a PML. I am still gradually learning. The reasoning behind PML let's us pretend that waves are leaving the simulation domain, simulating an open end to the wave field, where no reflections are expected, e.g. infinitely far range.
 
 The Wave Equation is a continuous PDE, that needs to be discretized first, in order to be simulated. We will be using a finite difference approximation for this. 
 Discretization, aka the nifty math of turning the PDE into something approximated, that can be simulated on a big grid with a step size $(dx)$ and $(dy)$ in the $(x)$- and $(y)$-directions. 
@@ -45,7 +45,7 @@ Where:
 - $(dt)$ is the time step,
 - $(dx)$ and $(dy)$ are the spatial step sizes.
 
-Substitute the terms in the PDE waveequation with the discretized difference approximation (see above) and solve for $(u(...)) to get the function for  the numerical update for earch point in the grid at time $(t+dt\$:
+Substitute the terms in the PDE waveequation with the discretized difference approximation (see above) and solve for $(u(...)) to get the function for  the numerical update for earch point in the grid at time $(t+dt)$:
 
 
 $$
