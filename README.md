@@ -7,19 +7,19 @@ Simulation of the [wave equation](https://en.wikipedia.org/wiki/Wave_equation) i
 
 The simulation uses a 2D grid to model the behavior of waves as they propagate across an inhomogeneous medium. The key objective is to simulate how waves behave and observe emerging patterns. Meaning, where are they going, how are they reflecting, are there areas where the waves focus?
 
+
+This is the 2D wave equation:
+
 $$
 \frac{\partial^2 u(x, y, t)}{\partial t^2} = c^2(x, y) \left( \frac{\partial^2 u(x, y, t)}{\partial x^2} + \frac{\partial^2 u(x, y, t)}{\partial y^2} \right)
 $$
 
 Where:
 - $(u(x, y, t))$ is the wave field, representing the displacement of the medium at location $(x, y)$ and time $t$,
-- $(c(x, y))$ is the variable wave speed at location $(x, y)$,
+- $(c(x, y))$ is the wave speed being dependent on the location $(x, y)$, meaning it can change -> inhomogenous medium
 - $(\frac{\partial^2}{\partial t^2})$ is the time second derivative,
 - $(\frac{\partial^2}{\partial x^2})$ and $(\frac{\partial^2}{\partial y^2})$ are the spatial second derivatives.
 
-The simulation also handles boundary conditions, where the waves are reflected.
-
-I tried to implement Perfectly Matched Layer (short PML) to prevent wave reflections. Tho this not as simple as I thought it to be. I realize that waves still reflect no matter how I treat the boundary with a PML. I am still gradually learning. The reasoning behind PML let's us pretend that waves are leaving the simulation domain, simulating an open end to the wave field, where no reflections are expected, e.g. infinitely far range.
 
 The Wave Equation is a continuous PDE, that needs to be discretized first, in order to be simulated. We will be using a finite difference approximation for this. 
 Discretization, aka the nifty math of turning the PDE into something approximated, that can be simulated on a big grid with a step size $(dx)$ and $(dy)$ in the $(x)$- and $(y)$-directions. 
@@ -56,6 +56,10 @@ Where $(r = \frac{c(x, y) \cdot dt}{dx})$ is the stability parameter that depend
 
 
 This formula can be implemented in Python to simulate the 2D wave.
+
+The simulation also handles boundary conditions, where the waves are reflected.
+
+I tried to implement Perfectly Matched Layer (short PML) to prevent wave reflections. Tho this not as simple as I thought it to be. I realize that waves still reflect no matter how I treat the boundary with a PML. I am still gradually learning. The reasoning behind PML let's us pretend that waves are leaving the simulation domain, simulating an open end to the wave field, where no reflections are expected, e.g. infinitely far range.
 
 
 
