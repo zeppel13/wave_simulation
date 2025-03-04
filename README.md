@@ -2,6 +2,8 @@
 
 Simulation of the [wave equation](https://en.wikipedia.org/wiki/Wave_equation) in 2D in an inhomogenous medium, inhomogenous means that the speed of the wave changes depending on the position in the medium, e.g the propagation of sound in an oceanic environment or seismic activity. Motivation: This project is intended to be a learning experience for me.
 
+[There is a interactive version of this simulation on my web page](https://sebastiankind.de/wave_simulation.html) (work in progress)
+
 ![Wave Propagating](plot2.png)
 
 
