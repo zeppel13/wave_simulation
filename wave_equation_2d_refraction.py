@@ -11,7 +11,7 @@ c0 = 3.0 #reference wave speed
 
 # Dimension of Grid, 100, 100 is good for fast checks
 # 400, 800 works on my Laptop
-Nx, Ny = 400, 800  
+Nx, Ny = 100, 100  
 dx = dy = 0.5  #rather magic trial-and-error parameter
 
 
