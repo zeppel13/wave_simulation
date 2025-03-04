@@ -102,3 +102,11 @@ The second plot displays the **wave front** as it propagates inhomogeneous mediu
 This little project achieved my goal of learning how the wave equation can be modeled. I did another project that uses ray tracing to simulate the refraction of waves in an inhomogeneous medium, especially to discover shadow zones with high damping in sonar applications. Future projects should solve the boundary conditions so waves can leave the simulation domain without any reflections or artifacts that keep interfering with the simulation.
 
 I am interested in how these insights here can be scaled to the same problem for electromagnetic waves to simulate the radiation pattern of antennas in 3D.
+
+
+
+Bonus:
+
+Screenshot of the interactive wave simulation in JavaScript on my webpage
+
+![Screenshot of the interactive wave simulation in JavaScript on my webpage](interactive_simulation.png)
