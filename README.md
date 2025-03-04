@@ -110,3 +110,4 @@ Bonus:
 Screenshot of the interactive wave simulation in JavaScript on my webpage
 
 ![Screenshot of the interactive wave simulation in JavaScript on my webpage](interactive_simulation.png)
+[There is a interactive version of this simulation on my web page](https://sebastiankind.de/wave_simulation.html) (work in progress)
